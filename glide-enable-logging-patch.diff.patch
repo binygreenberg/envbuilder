@@ -1,0 +1,41 @@
+diff --git a/glide-launcher/glide-home-dist/conf/logging.properties b/glide-launcher/glide-home-dist/conf/logging.properties
+index e73f21f..c45fd97 100644
+--- a/glide-launcher/glide-home-dist/conf/logging.properties
++++ b/glide-launcher/glide-home-dist/conf/logging.properties
+@@ -1,4 +1,5 @@
+ handlers = \
++  org.apache.juli.FileHandler, \
+   com.glide.orbit.bootstrap.logging.GlideOrbitConsoleHandler
+ 
+ .handlers = \
+@@ -13,13 +14,13 @@ com.glide.orbit.bootstrap.logging.GlideOrbitConsoleHandler.level = FINE
+ com.glide.orbit.bootstrap.logging.GlideOrbitConsoleHandler.formatter = \
+   com.glide.orbit.bootstrap.logging.GlideOrbitFormatter
+ 
+-#org.apache.juli.FileHandler.level = ALL
+-#org.apache.juli.FileHandler.formatter = \
+-#  com.glide.orbit.bootstrap.logging.GlideOrbitFormatter
+-#org.apache.juli.FileHandler.directory = ../logs
+-#org.apache.juli.FileHandler.prefix = localhost_log.
+-#org.apache.juli.FileHandler.suffix = .txt
+-#org.apache.juli.FileHandler.rotatable = true
++org.apache.juli.FileHandler.level = ALL
++org.apache.juli.FileHandler.formatter = \
++  com.glide.orbit.bootstrap.logging.GlideOrbitFormatter
++org.apache.juli.FileHandler.directory = glide-home-dist/logs
++org.apache.juli.FileHandler.prefix = localhost_log.
++org.apache.juli.FileHandler.suffix = .txt
++org.apache.juli.FileHandler.rotatable = true
+ 
+ ############################################################
+ # Facility specific properties.
+@@ -48,5 +49,7 @@ org.apache.catalina.startup.Catalina.handlers = \
+ org.apache.catalina.startup.Catalina.level = FINE
+ 
+ glide.handlers = \
++  org.apache.juli.FileHandler, \
+   com.glide.orbit.bootstrap.logging.GlideOrbitConsoleHandler
+-glide.useParentHandlers = false
+\ No newline at end of file
++glide.level = ALL
++glide.useParentHandlers = false
